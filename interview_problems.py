@@ -26,22 +26,22 @@ class LinkedList(object):
 		return current
 
 	def reverse(self):
-	if self.head.next == None or self.head == None:
-		break
-	a = self.head
-	b = a.next
-	c = b.next
+		if self.head.next == None or self.head == None:
+			break
+		a = self.head
+		b = a.next
+		c = b.next
 
-	a.next = None
-	b.next = a
-	a = b
-
-	while c != None:
-		b = c
-		c = c.next
+		a.next = None
 		b.next = a
 		a = b
-	self.head = b
+
+		while c != None:
+			b = c
+			c = c.next
+			b.next = a
+			a = b
+		self.head = b
 
 	def recursive_reverse(self, node):
 		temp = None
@@ -84,7 +84,6 @@ def run_length_decoding(encoded_sequence):
 print run_length_decoding('a5b6c15')
 
 
-
 # The hundred chairs problem:
 # 100 chairs in a circle numbered 1-100
 # kind of like musical chairs
@@ -107,6 +106,21 @@ def rm_circular(self):
 		this.next = this.next.next
 		this = this.next
 	return this.data
+
+def is_palindrome_with_punctuation(s):
+	s = s.strip(' ')
+	start = 0
+	finish  = len(s) - 1
+	last = s[len(s) - 1]
+
+	while not s[start].islower():
+		start += 1
+	while not s[finish].islower():
+		finish -= 1
+
+	while s[start] == s[finish]:
+		start += 1
+		finish -= 1
 	
 
 
