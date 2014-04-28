@@ -22,4 +22,3 @@ def total_cost_csc(adults, children, seniors):
 	return adult_cost + senior_cost + children_cost
 
 def membership_level(adults, children, seniors):
-	
